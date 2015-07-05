@@ -1,0 +1,78 @@
+<div class="col-sm-12">
+  <h1>Projects</h1>
+</div>
+
+<div class="row">
+  <div class="col-md-6">
+    <rd-widget>
+			<rd-widget-header icon="fa-users" title="Project Title">
+				<button class="btn btn-sm btn-default">Button</button>
+			</rd-widget-header>
+			<rd-widget-body classes="medium">
+
+			</rd-widget-body>
+		<rd-widget>
+  </div>
+  <div class="col-md-6">
+    <rd-widget>
+			<rd-widget-header icon="fa-users" title="Project Title">
+				<button class="btn btn-sm btn-default">Button</button>
+			</rd-widget-header>
+			<rd-widget-body classes="medium">
+				<div class="table-responsive">
+					<table class="table">
+						<thead>
+							<tr><th class="text-center">ID</th><th>Username</th><th>Role</th><th>Account</th></tr>
+						</thead>
+						<tbody>
+							<tr><td class="text-center">1</td><td>Joe Bloggs</td><td>Super Admin</td><td>AZ23045</td></tr>
+							<tr><td class="text-center">2</td><td>Timothy Hernandez</td><td>Admin</td><td>AU24783</td></tr>
+							<tr><td class="text-center">3</td><td>Joe Bickham</td><td>User</td><td>AM23781</td></tr>
+						</tbody>
+					</table>
+        		</div>
+			</rd-widget-body>
+		<rd-widget>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-12">
+    <p>
+        <button class="btn btn-default btn-sm" ng-click="status.open = !status.open">Toggle last panel</button>
+        <button class="btn btn-default btn-sm" ng-click="status.isFirstDisabled = ! status.isFirstDisabled">Enable / Disable first panel</button>
+      </p>
+
+      <label class="checkbox">
+        <input type="checkbox" ng-model="oneAtATime">
+        Open only one at a time
+      </label>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-12">
+    <accordion close-others="oneAtATime">
+      <accordion-group heading="Static Header, initially expanded" is-open="status.isFirstOpen" is-disabled="status.isFirstDisabled">
+        This content is straight in the template.
+      </accordion-group>
+      <accordion-group ng-repeat="project in projects">
+        <accordion-heading>
+            {{project.title}}
+        </accordion-heading>
+        {{project.content}}
+      </accordion-group>
+      <accordion-group heading="Dynamic Body Content">
+        <p>The body of the accordion group grows to fit the contents</p>
+          <button class="btn btn-default btn-sm" ng-click="addItem()">Add Item</button>
+          <div ng-repeat="item in items">{{item}}</div>
+      </accordion-group>
+      <accordion-group is-open="status.open">
+          <accordion-heading>
+              I can have markup, too! <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+          </accordion-heading>
+          This is just some content to illustrate fancy headings.
+      </accordion-group>
+    </accordion>
+  </div>
+</div>
