@@ -1,36 +1,19 @@
-<div class="col-sm-12">
-  <h1>Projects</h1>
-</div>
+<header class="image-bg steps-ptn">
+  <div class="col-sm-12">
+    <h1><strong>Projects</strong></h1>
+    <p class="lead">This is the about me sub-header</p>
+  </div>
+  <!-- <img class="img-responsive img-center" src="http://placehold.it/200x200&text=Logo" alt=""> -->
+</header>
 
 <div class="row">
-  <div class="col-md-6">
+  <div ng-repeat="project in projects" class="col-md-6">
     <rd-widget>
-			<rd-widget-header icon="fa-users" title="Project Title">
+			<rd-widget-header icon="fa-users" title='{{project.title}}'>
 				<button class="btn btn-sm btn-default">Button</button>
 			</rd-widget-header>
 			<rd-widget-body classes="medium">
-
-			</rd-widget-body>
-		<rd-widget>
-  </div>
-  <div class="col-md-6">
-    <rd-widget>
-			<rd-widget-header icon="fa-users" title="Project Title">
-				<button class="btn btn-sm btn-default">Button</button>
-			</rd-widget-header>
-			<rd-widget-body classes="medium">
-				<div class="table-responsive">
-					<table class="table">
-						<thead>
-							<tr><th class="text-center">ID</th><th>Username</th><th>Role</th><th>Account</th></tr>
-						</thead>
-						<tbody>
-							<tr><td class="text-center">1</td><td>Joe Bloggs</td><td>Super Admin</td><td>AZ23045</td></tr>
-							<tr><td class="text-center">2</td><td>Timothy Hernandez</td><td>Admin</td><td>AU24783</td></tr>
-							<tr><td class="text-center">3</td><td>Joe Bickham</td><td>User</td><td>AM23781</td></tr>
-						</tbody>
-					</table>
-        		</div>
+        <p>{{project.content}}</p>
 			</rd-widget-body>
 		<rd-widget>
   </div>

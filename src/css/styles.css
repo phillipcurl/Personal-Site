@@ -65,7 +65,6 @@
 .row.header {
   height: 60px;
   background: #fff;
-  margin-bottom: 15px;
 }
 .row.header > div:last-child {
   padding-right: 0;
@@ -208,6 +207,14 @@ h4,
 h5 {
   font-family: 'Montserrat', sans-serif;
 }
+header {
+  min-height: 300px;
+  padding: 40px 0px;
+  margin-bottom: 15px;
+}
+h1 {
+  font-size: 3.5em;
+}
 .row {
   margin-left: 0 !important;
   margin-right: 0 !important;
@@ -237,7 +244,7 @@ h5 {
 }
 #page-wrapper,
 #sidebar-wrapper {
-  transition: all .4s ease 0s;
+  transition: all .3s ease 0s;
 }
 .green {
   background: #23ae89 !important;
@@ -251,6 +258,9 @@ h5 {
 .red {
   background: #ae2323 !important;
 }
+.gutter-top {
+  margin-top: 15px;
+}
 .form-group .help-block.form-group-inline-message {
   padding-top: 5px;
 }
@@ -263,7 +273,44 @@ div.input-mask {
 .panel-title a {
   cursor: pointer;
 }
+.skinny-header {
+  margin-top: 10px;
+}
+.image-bg {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+.img-center {
+  margin: 0 auto;
+}
 
+
+.congruent-ptn {
+  background: url('../img/congruent.png') repeat repeat center scroll;
+}
+.escher-ptn {
+  background: url('../img/escher.png') repeat repeat center scroll;
+}
+.feathers-ptn {
+  background: url('../img/feathers.png') repeat repeat center scroll;
+}
+.geometry-ptn {
+  background: url('../img/geometry-new.png') repeat repeat center scroll;
+}
+.stardust-ptn {
+  background: url('../img/stardust.png') repeat repeat center scroll;
+}
+.steps-ptn {
+  background: url('../img/steps.png') repeat repeat center scroll;
+}
+.swirl-ptn {
+  background: url('../img/swirl.png') repeat repeat center scroll;
+}
+.trees-ptn {
+  background: url('../img/trees.png') repeat repeat center scroll;
+}
 
 /**
  * Sidebar
@@ -390,6 +437,7 @@ ul.sidebar .sidebar-list .menu-icon {
 /* Sidebar header and footer color */
 /* Sidebar title text colour */
 /* Sidebar menu item hover color */
+/* Image paths used for the pattern backgrounds */
 
 /**
  * Widgets

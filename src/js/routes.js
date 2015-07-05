@@ -13,7 +13,7 @@ angular.module('myApp').config(['$stateProvider', '$urlRouterProvider',
         $stateProvider
             .state('index', {
                 url: '/',
-                templateUrl: 'templates/dashboard.html'
+                templateUrl: 'templates/home.html'
             })
             .state('about', {
                 url: '/about',
@@ -26,7 +26,8 @@ angular.module('myApp').config(['$stateProvider', '$urlRouterProvider',
             })
             .state('writing', {
                 url: '/writing',
-                templateUrl: 'templates/writing.html'
+                templateUrl: 'templates/writing.html',
+                controller: 'WritingCtrl'
             });
     }
 ]);
