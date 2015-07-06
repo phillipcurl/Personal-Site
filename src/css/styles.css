@@ -64,7 +64,8 @@
  */
 .row.header {
   height: 60px;
-  background: #fff;
+  background: #738bc0;
+  color: #fff;
 }
 .row.header > div:last-child {
   padding-right: 0;

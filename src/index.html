@@ -33,7 +33,7 @@
         <li class="sidebar-main">
           <a ng-click="toggleSidebar()">
             Phillip Curl
-            <span class="menu-icon glyphicon glyphicon-transfer"></span>
+            <i class="pull-right menu-icon glyphicon" ng-class="{'glyphicon-chevron-left': toggle, 'glyphicon-chevron-right': !toggle}"></i>
           </a>
         </li>
         <li class="sidebar-title"><span>NAVIGATION</span></li>
@@ -74,7 +74,7 @@
       <div class="page-content">
 
         <!-- Header Bar -->
-        <div class="row header">
+        <div class="row header visible-xs">
           <div class="col-xs-12">
             <div class="user pull-right">
               <!-- <div class="item dropdown">
