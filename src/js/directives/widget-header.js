@@ -14,7 +14,7 @@ function rdWidgetTitle() {
             icon: '@'
         },
         transclude: true,
-        template: '<div class="widget-header clearfix"><div class="pull-left"><i class="fa" ng-class="icon"></i> {{title}} </div><div class="pull-right" ng-transclude></div></div>',
+        template: '<div class="widget-header clearfix"><div class="pull-left"><h4><i class="fa" ng-class="icon"></i> {{title}}</h4> </div><div class="pull-right" ng-transclude></div></div>',
         restrict: 'E'
     };
     return directive;

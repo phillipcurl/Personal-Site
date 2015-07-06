@@ -3,13 +3,19 @@
  */
 
 angular.module('myApp')
-    .controller('MasterCtrl', ['$scope', '$cookieStore', MasterCtrl]);
+    .controller('MasterCtrl', ['$scope', '$timeout', '$cookieStore', MasterCtrl]);
 
-function MasterCtrl($scope, $cookieStore) {
+function MasterCtrl($scope, $timeout, $cookieStore) {
     /**
      * Sidebar Toggle & Cookie Control
      */
     var mobileView = 992;
+
+    $scope.showAlerts = true;
+
+    $timeout(function(){
+      $scope.showAlerts = false;
+    }, 7000);
 
     $scope.getWidth = function() {
         return window.innerWidth;

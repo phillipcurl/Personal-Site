@@ -28,11 +28,11 @@
 
 /**
  * Hamburg Menu
- * When the class of 'hamburg' is applied to the body tag of the document, 
+ * When the class of 'hamburg' is applied to the body tag of the document,
  * the sidebar changes it's style to attempt to mimic a menu on a phone app,
  * where the content is overlaying the content, rather than push it.
  */
-@media only screen and (max-width: 560px) {
+@media only screen and (max-width: 768px) {
   body.hamburg #page-wrapper {
     padding-left: 0;
   }
@@ -64,7 +64,7 @@
  */
 .row.header {
   height: 60px;
-  background: #738bc0;
+  background: #30426a;
   color: #fff;
 }
 .row.header > div:last-child {
@@ -209,7 +209,7 @@ h5 {
 }
 header {
   min-height: 300px;
-  padding: 40px 0px;
+  padding: 40px 40px;
   margin-bottom: 15px;
 }
 h1 {
@@ -285,6 +285,15 @@ div.input-mask {
 .img-center {
   margin: 0 auto;
 }
+.no-fade {
+  opacity: 1;
+}
+.fade {
+  -webkit-transition: opacity 1.5s;
+  /* For Safari 3.1 to 6.0 */
+  transition: opacity 1.5s;
+  opacity: 0;
+}
 
 
 .congruent-ptn {
@@ -317,6 +326,7 @@ div.input-mask {
  */
 #sidebar-wrapper {
   background: #30426a;
+  z-index: 1000;
 }
 ul.sidebar .sidebar-main a,
 .sidebar-footer,
@@ -464,6 +474,9 @@ ul.sidebar .sidebar-list .menu-icon {
 }
 .widget .widget-header i {
   margin-right: 5px;
+}
+.widget .widget-header .btn i {
+  margin-right: 0px;
 }
 .widget .widget-body {
   padding: 20px;

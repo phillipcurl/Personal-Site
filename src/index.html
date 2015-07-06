@@ -31,23 +31,23 @@
     <div id="sidebar-wrapper">
       <ul class="sidebar">
         <li class="sidebar-main">
-          <a ng-click="toggleSidebar()">
+          <a ng-click="toggleSidebar()" title="Toggle Navigation">
             Phillip Curl
             <i class="pull-right menu-icon glyphicon" ng-class="{'glyphicon-chevron-left': toggle, 'glyphicon-chevron-right': !toggle}"></i>
           </a>
         </li>
         <li class="sidebar-title"><span>NAVIGATION</span></li>
         <li class="sidebar-list">
-          <a href="#dashboard">Home <span class="menu-icon fa fa-tachometer"></span></a>
+          <a href="#dashboard">Home <span class="menu-icon fa fa-home"></span></a>
         </li>
         <li class="sidebar-list">
-          <a href="#/about">About <span class="menu-icon fa fa-table"></span></a>
+          <a href="#/about">About <span class="menu-icon fa fa-user"></span></a>
         </li>
         <li class="sidebar-list">
-          <a href="#/projects">Projects <span class="menu-icon fa fa-table"></span></a>
+          <a href="#/projects">Projects <span class="menu-icon fa fa-cube"></span></a>
         </li>
         <li class="sidebar-list">
-          <a href="#/writing">Writing <span class="menu-icon fa fa-table"></span></a>
+          <a href="#/writing">Writing <span class="menu-icon fa fa-pencil"></span></a>
         </li>
       </ul>
       <div class="sidebar-footer">
@@ -140,6 +140,13 @@
           </div>
         </div>
         <!-- End Header Bar -->
+
+        <div class="row alerts-container" ng-class="{'fade': !showAlerts, 'no-fade': showAlerts}"
+          data-ng-controller="AlertsCtrl" data-ng-show="alerts.length" style="position:absolute; z-index:900;">
+          <div data-ng-repeat="alert in alerts" class="col-xs-12" ng-class="{'hidden': alert.wasClosed, 'visible': !alert.wasClosed}">
+            <alert type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</alert>
+          </div>
+        </div>
 
         <!-- Main Content -->
         <div ui-view></div>
