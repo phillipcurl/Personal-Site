@@ -10,7 +10,7 @@
   <div ng-repeat="project in projects" class="col-md-6">
     <rd-widget>
 			<rd-widget-header icon="fa-users" title='{{project.title}}'>
-				<button class="btn btn-sm btn-default">Button</button>
+				<a href="{{project.url}}" class="btn btn-sm btn-default">Button</a>
 			</rd-widget-header>
 			<rd-widget-body classes="medium">
         <p>{{project.content}}</p>
@@ -19,7 +19,7 @@
   </div>
 </div>
 
-<div class="row">
+<!-- <div class="row">
   <div class="col-sm-12">
     <p>
         <button class="btn btn-default btn-sm" ng-click="status.open = !status.open">Toggle last panel</button>
@@ -58,4 +58,4 @@
       </accordion-group>
     </accordion>
   </div>
-</div>
+</div> -->

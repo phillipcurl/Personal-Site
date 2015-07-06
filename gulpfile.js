@@ -16,6 +16,7 @@ var paths = {
     images: 'src/img/**/*.*',
     templates: 'src/templates/**/*.html',
     index: 'src/index.html',
+    bower_fonts: 'src/components/**/*.{ttf,woff,eof,svg}',
 };
 
 /**
@@ -28,6 +29,19 @@ gulp.task('usemin', function() {
             css: [minifyCss({keepSpecialComments: 0}), 'concat'],
         }))
         .pipe(gulp.dest('dist/'));
+});
+
+/**
+ * Copy assets
+ */
+gulp.task('build-assets', ['copy-bower_fonts']);
+
+gulp.task('copy-bower_fonts', function() {
+    return gulp.src(paths.bower_fonts)
+        .pipe(rename({
+            dirname: '/fonts'
+        }))
+        .pipe(gulp.dest('dist/lib'));
 });
 
 /**
@@ -49,14 +63,14 @@ gulp.task('custom-js', function() {
 
 gulp.task('custom-less', function() {
   gulp.src(paths.styles)
-      .pipe(less())
-      .pipe(concat('styles.css'))
-      .pipe(gulp.dest('src/css'));
+    .pipe(less())
+    .pipe(concat('styles.css'))
+    .pipe(gulp.dest('src/css'));
 
   return gulp.src('src/css/styles.css')
-      .pipe(minifyCss())
-      .pipe(rename('styles.min.css'))
-      .pipe(gulp.dest('dist/css/'))
+    .pipe(minifyCss())
+    .pipe(rename('styles.min.css'))
+    .pipe(gulp.dest('dist/css/'))
 });
 
 gulp.task('custom-templates', function() {
@@ -70,7 +84,7 @@ gulp.task('custom-templates', function() {
  */
 gulp.task('watch', function() {
     gulp.watch([paths.images], ['custom-images']);
-    gulp.watch([paths.styles], ['custom-less']);
+    gulp.watch([paths.styles], ['custom-less', 'custom-templates']);
     gulp.watch([paths.scripts], ['custom-js']);
     gulp.watch([paths.templates], ['custom-templates']);
     gulp.watch([paths.index], ['usemin']);
@@ -96,5 +110,5 @@ gulp.task('livereload', function() {
 /**
  * Gulp tasks
  */
-gulp.task('build', ['usemin', 'build-custom']);
+gulp.task('build', ['usemin', 'build-assets', 'build-custom']);
 gulp.task('default', ['build', 'webserver', 'livereload', 'watch']);
