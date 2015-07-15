@@ -1,23 +1,26 @@
 <header class="image-bg steps-ptn">
   <div class="col-sm-12">
-    <h1><strong>Projects</strong></h1>
+    <h1>
+      <strong>Projects</strong>
+    </h1>
     <p class="lead">This is the about me sub-header</p>
   </div>
-  <!-- <img class="img-responsive img-center" src="http://placehold.it/200x200&text=Logo" alt=""> -->
+<!-- <img class="img-responsive img-center" src="http://placehold.it/200x200&text=Logo" alt=""> -->
 </header>
 
 <div class="row">
-  <div ng-repeat="project in projects" class="col-md-6">
+  <div class="col-md-6" ng-repeat="project in projects">
     <rd-widget>
-			<rd-widget-header icon="fa-users" title='{{project.title}}'>
-				<a href="{{project.url}}" class="btn btn-default"><i class="fa fa-arrow-right"></i></a>
-			</rd-widget-header>
-			<rd-widget-body classes="medium">
+      <rd-widget-header icon="fa-users" title='{{project.title}}'>
+        <a class="btn btn-default" href="{{project.url}}">
+          <i class="fa fa-arrow-right"></i>
+        </a>
+      </rd-widget-header>
+      <rd-widget-body classes="medium">
         <p>{{project.content}}</p>
-			</rd-widget-body>
-		<rd-widget>
-  </div>
-</div>
+      </rd-widget-body>
+      <rd-widget></div>
+    </div>
 
 <!-- <div class="row">
   <div class="col-sm-12">
